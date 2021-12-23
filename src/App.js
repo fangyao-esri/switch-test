@@ -1,24 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
+import '@esri/calcite-components/dist/calcite/calcite.css';
+import { CalciteSwitch, CalciteButton } from '@esri/calcite-components-react';
+import {useState} from "react";
+
+
 
 function App() {
+  const [test, setTest] = useState(true);
+
+  const onTestButtonClick = () =>{
+    setTest(!test);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <CalciteSwitch checked={true}></CalciteSwitch>
+      <CalciteButton onClick={onTestButtonClick}>Test</CalciteButton>
+
     </div>
+
+
+
   );
 }
 
